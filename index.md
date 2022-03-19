@@ -65,7 +65,11 @@ Para este ejercicio se crearon tres objetos de la clase **Pokemon** y se creo uu
 #### Resultado Combate
 ![Resultado combate](./assets/images/resultado-combate.PNG)
 
+### Test Unitario
+![Test ejercicio 1](./assets/images/test-ej1.PNG)
 
+Test donde se ha llevado a cabo comprobaciones para las tres clases del programa y algunos de sus métodos.
 
-
+### Demostración Test Unitario
+![resultadoTest1](./assets/images/resultado-test-ej1.PNG)
 
