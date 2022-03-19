@@ -11,8 +11,11 @@ Para el siguiente ejercicio se optó por el desarrollo de una clase **Pokemon** 
 ### Código
 #### Clase Pokemon
 ![clase Pokemon Parte 1](./assets/images/clase-pokemon1.PNG)
+
 ![clase Pokemon Parte 2](./assets/images/clase-pokemon2.PNG)
+
 ![clase Pokemon Parte 3](./assets/images/clase-pokemon3.PNG)
+
 ![clase Pokemon Parte 4](./assets/images/clase-pokemon4.PNG)
 
 La clase **Pokemon** tiene los siguientes atributos privados:
@@ -23,3 +26,18 @@ La clase **Pokemon** tiene los siguientes atributos privados:
 * **estadisticas** almacena como array de number la vida, el ataque, la defensa y la velocidad del Pokemon.
 
 Además de los **get** y **set** de cada atributo, también se añadieron los **get** y **set** para las estadisticas vida, ataque, defensa y velocidad.
+
+#### Clase Pokedex
+![clase Pokedex](./assets/images/clase-pokedex.PNG)
+
+La clase **pokedex** tiene como atributo privado **pokemons**, que corresponde con un array del tipo de clase **Pokemon**.
+Los tres métodos que contiene la clase son:
+* **getPokemon** para devolver un Pokemon en concreto de el array **pokemons**.
+* **getNumberOfPokemons** para devolver el tamaño del array **pokemons** y asi saber cuantos Pokemons hay en la Pokedex.
+* **print** para visualizar la información de los Pokemons.
+
+El método **print** realiza un bucle **for** llamando al método **getNumberOfPokemons** y asi realizar tantas iteraciones como Pokemons en la Pokedex. En dicho bucle, se va llamando en cada iteración al método **getPokemon** y al método **get** de cada atributo y estadistica de la clase **Pokemon**.
+
+Gracias a las dos clases **Pokemon** y **Pokedex** se puede representar corrrectamente la información de distintos pokemons.
+
+
