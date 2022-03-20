@@ -73,3 +73,60 @@ Test donde se ha llevado a cabo comprobaciones para las tres clases del programa
 ### Demostración Test Unitario
 ![resultadoTest1](./assets/images/resultado-test-ej1.PNG)
 
+## Ejercicio 2 - Conecta 4
+El objetivo de este ejercicio es crear el conocido juego del conecta 4.
+
+### Estructura
+Para el siguiente ejercicio se optó por el desarrollo de una clase **Player** que almacena el nombre del jugador y el símbolo de su ficha (por falta de tiempo no se usó este atributo). También, una clase **Board** que corresponde con el tablero de juego y la clase **Conecta4** que contiene los métodos para llevar a cabo una partida.
+
+### Código
+#### Clase Player
+![clase Player](./assets/images/clase-player.PNG)
+
+La clase **Player** contiene como atributos privados **name** para el nombre del jugador y **token** para el simbolo que quiere usar ese jugador en la partida, como apunté anteriormente, por falta de tiempo este atributo no se llegó a usar.
+Además, contiene métodos **get** y **set** para ambos atributos.
+
+#### Clase Board
+![clase Board1](./assets/images/clase-board1.PNG)
+![clase Board2](./assets/images/clase-board2.PNG)
+
+La clase **Board** contiene como atributo privado a **board**, en el constructor será dimensionado a un tamaño 6 * 7.
+Además, la clase **Board** contiene métodos **SetBoard** y **getBoard** que modifican y buscan una posición en concreto del tablero **board** respectivamnete. También, incluye el método **print** con el cual se visualiza por consola el estado del tablero.
+
+#### Clase Conecta4
+![clase Conecta4 parte 1](./assets/images/clase-conecta1.PNG)
+![clase Conecta4 parte 2](./assets/images/clase-conecta2.PNG)
+![clase Conecta4 parte 3](./assets/images/clase-conecta3.PNG)
+![clase Conecta4 parte 4](./assets/images/clase-conecta4.PNG)
+![clase Conecta4 parte 5](./assets/images/clase-conecta5.PNG)
+
+La clase **Conecta4** se construye mediante dos objetos de la clase **Player** y un objeto de la clase **Board**.
+Entre los métodos de la clase se encuentra:
+* **ganar2** y **ganar1** que comprueban las fichas juntas que ha introducido el jugador2 y el jugador1 respectivamente, además de dar un valor **true** si puede ganar o **false** en caso contrario. Estos dos métodos realizan bucles **while** en el que van aumentando un contador si se encuentran fichas del mismo jugador en una dirección en la cual se va incrementando o decrementando la i o la j. Por falta de tiempo no se pudo implementar las diagonales por lo que le programa solo da un vencedor para fichas verticales u horizontales.
+* **start** programa principal de la clase en el que se realiza un bucle **while** tantas veces como casillas del tablero. Dentro del bucle, se comienza instanciando una variable **i** a 5, correspondiendo con la ultima fila del tablero y se solicita al jugador1 que intruzca por parametros la columna (**j**) en la que quiere colocar su ficha. Si la columna seleccionada esta completa o no corresponde dentro del tamaño del tablero, le pedirá introducir otra columna hasta que sea correcta. Después, si la posición de la columna donde quiere introducir la ficha es igual a 0, se introduce el valor 1 correspondiente al jugador 1 y se comprueba llamando al método **ganar1** si puede ganar ya y parar el programa. Si la posición no contenia un 0 se realiza un bucle **while** que va escalando en la posición de i para poder introducir una ficha por encima y volver a preguntar despues del **while** por la condición de victoria nuevamente. Finalmente se resetea el valor de i a 5 y le toca el turno al jugador 2 realizando los mismos pasos.
+
+#### Objetos y llamadas a métodos
+![Objetos](./assets/images/objetos-ej2.PNG)
+
+Para este ejercicio se crearon dos objetos de la clase **Player** correspondiente a los dos jugadores, un objeto de la clase **Board** y un objeto de la clase **Conecta4**. Finalmente se invocó al método **start** del objeto de la clase **Conecta4**.
+
+Para introducir por parametros las columnas donde el jugador queria introducir la ficha, se uso la herramienta scanf
+![scanf](./assets/images/scanf.PNG)
+
+### Resultados
+#### Resultado inicial
+![resultado inicial](./assets/images/resultado1.PNG)
+
+#### Resultado turno 1
+![resultado turno 1](./assets/images/resultado2.PNG)
+
+#### Resultado final de partida
+![resultado turno 1](./assets/images/resultado3.PNG)
+
+### Test Unitario
+![Test ejercicio 2](./assets/images/test-ej2.PNG)
+
+Test donde se ha llevado a cabo comprobaciones para las tres clases del programa.
+
+### Demostración Test Unitario
+![resultadoTest2](./assets/images/resultado-test-ej2.PNG)
