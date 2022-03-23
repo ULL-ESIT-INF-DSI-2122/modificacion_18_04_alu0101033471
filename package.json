@@ -9,6 +9,7 @@
     "modi": "tsc-watch --onSuccess \"node dist/modi.js\"",
     "eje1": "tsc-watch --onSuccess \"node dist/ejercicio-1.js\"",
     "eje2": "tsc-watch --onSuccess \"node dist/ejercicio-2.js\"",
+    "eje3": "tsc-watch --onSuccess \"node dist/ejercicio-3.js\"",
     "doc": "typedoc",
     "coverage": "nyc npm test && nyc report --reporter=text-lcov | coveralls && rm -rf .nyc_output"
   },

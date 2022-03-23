@@ -88,3 +88,79 @@ Test donde se ha llevado a cabo comprobaciones para todas las clases y todos los
 ### Demostración Test Unitario
 ![resultadoTest1](./assets/images/resultadoTesteje1.PNG)
 
+## Ejercicio 3 - El cifrado indescifrable
+
+El objetivo de este ejercicio es cifrar y descifrar mensajes a partir de un alfabeto y una clave.
+
+### Estructura
+
+Para la estructura de este ejercicio se ha optado por crear 3 clases:
+* **Mensaje** clase con el objetivo de crear un mensaje y tener metodos **Set** y **get** al respecto.
+* **Clave** clase con el objetivo de crear una clave y tener metodos **Set** y **get** al respecto.
+* **Cifrado** clase que va a recibir en el constructor un objeto de las dos clases previamente nombradas.
+
+### Código
+#### Clase Mensaje
+![Clase Mensaje](./assets/images/claseMensaje.PNG)
+
+La clase **Mensaje** recibe un string que va a ser el mensaje que utilizará posteriormente la clase **Cifrado**. Además, entre sus métodos se encuentra:
+
+* **getMensaje** y **setMensaje** para mostrar o modificar el string del mensaje.
+* **getMensajeSize** para devolver el valor del tamaño del mensaje.
+* **getMensajeValor** para devolver un valor en concreto del string mensaje.
+
+#### Clase Clave
+![Clase Clave](./assets/images/claseClave.PNG)
+
+La clase **Clave** recibe un string que va a ser la Clave que utilizará posteriormente la clase **Cifrado**. Además, entre sus métodos se encuentra:
+
+* **getClave** y **setClave** para mostrar o modificar el string de la Clave.
+* **getClaveSize** para devolver el valor del tamaño de la Clave.
+* **getClaveValor** para devolver un valor en concreto del string clave.
+
+#### Clase Cifrado
+![Clase Cifrado parte 1](./assets/images/claseCifrado1.PNG)
+
+![Clase Cifrado parte 2](./assets/images/claseCifrado2.PNG)
+
+![Clase Cifrado parte 3](./assets/images/claseCifrado3.PNG)
+
+La clase **Cifrado** tiene como atributo privado a **alfabeto**, el cual es un string con todas las letras del abecedario el cual se usará cifrar o descifrar el mensaje.
+Entre los métodos de la clase se encuentra:
+* **getAlfabeto** y **setAlfabeto** para mostrar o modificar el string del alfabeto.
+* **getAlfabetoSize** para devolver el valor del tamaño del alfabeto.
+* **comprobarValorAlfabeto** método que comprueba si un caracter en concreto del mensaje esta contenido entre los caracteres del alfabeto.
+* **codificacion** y **decodificacion** como métodos principales.
+
+EN el método **codificación**. Primero se crean variables auxiliares entre las que se encuentra: 
+* **claveAux** para almacenar una clave del mismo tamaño que el string mensaje.
+* **mensajeCifrado** sera el string final que almacenará el string Cifrado.
+* **contadorCaracterClave** contador que se usa para introducir en **claveAux** el caracter correspondiente a su valor y que cuando llegue a valer lo mismo que el tamaño del string clave, vuelva a valer 0.
+* **contadorCaracterAlfabeto** para almacenar la posicion del caracter de la clave dentro del alfabeto.
+* **posicionNuevoCaracter** para almacenar la posicion dentro del alfabeto correspondinete con el caracter que se busca cifrar.
+
+El método comienza con un bucle **for** que recorre el tamaño del mensaje para rellenar la variable **claveAux** y tenga el mismo tamaño que el mensaje y este formada por concatenaciones de la palabra que se almacena en el string **clave**.
+Después, se realiza otro bulce **for** tantas veces como tamaño del mensaje. Si el método **comprobarValorAlfabeto** devuelve false, se inserta en **mensajeCifrado** el caracter correspondiente del mensaje. Esto quiere decir que el caracter en cuestión no se encuentra dentro del alfabeto.
+Si la anterior condición no se cumple, **posicionNuevoCaracter** almacena la posicion dentro del alfabeto correspondinete con el caracter que se busca cifrar y se realiza otro bucle **for** buscando el caracter de **claveAux** en el alfabeto. Si se encuentra el caracter, entonces se pregunta si la suma **posicionNuevoCaracter y contadorCaracterAlfabeto** es mayor o igual a 27 (debido al tamaño de un alfabeto), si esto es positivo, en **mensajeCifrado** se concatena el caracter del alfabeto que se encuentre en la posicion de la suma de **posicionNuevoCaracter y contadorCaracterAlfabeto** menos 27. En caso contrario en **mensajeCifrado** se concatena el caracter del alfabeto que se encuentre en la posicion de la suma de **posicionNuevoCaracter y contadorCaracterAlfabeto**.
+Finalmnete en **mensajeCifrado** queda el mensaje cifrado que se queria obtener.
+
+Para el caso del descifrado, el algoritmo es el mismo, con la diferencia de que no se pregunta si la suma de **posicionNuevoCaracter y contadorCaracterAlfabeto** menos 27, se pregunta si **posicionNuevoCaracter < contadorCaracterAlfabeto**. En caso afirtmativo, en **mensajeCifrado** se concatena el caracter del alfabeto que se encuentre en la posicion 27 menos la resta de **posicionNuevoCaracter y contadorCaracterAlfabeto**. En caso negativo, n **mensajeCifrado** se concatena el caracter del alfabeto que se encuentre en la posicion de restar **posicionNuevoCaracter y contadorCaracterAlfabeto**.
+
+#### Objetos y llamadas a métodos
+![Objetos1](./assets/images/objetoseje3.PNG)
+
+### Resultados
+![Resultado](./assets/images/resultadoeje3.PNG)
+
+### Test Unitario
+![Test ejercicio 3 parte 1](./assets/images/test3parte1.PNG)
+
+![Test ejercicio 3 parte 2](./assets/images/test3parte2.PNG)
+
+![Test ejercicio 3 parte 3](./assets/images/test3parte3.PNG)
+
+### Demostración Test Unitario
+![resultadoTest3](./assets/images/resultadoTesteje3.PNG)
+
+### Coverage
+![Coverage](./assets/images/coverage3.PNG)
