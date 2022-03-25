@@ -88,8 +88,82 @@ Test donde se ha llevado a cabo comprobaciones para todas las clases y todos los
 ### Demostración Test Unitario
 ![resultadoTest1](./assets/images/resultadoTesteje1.PNG)
 
-## Ejercicio 3 - El cifrado indescifrable
+## Ejercicio 2 DSIflix
+El objetivo de este ejercicio es crear una interfaz genérica que sea usada por una clase abstracta relacionada con la coleeccion de videos, ya sean series, documentales o peliculas. Crear una estructura de clases que organice el modelo de datos de una plataforma de vídeo en streaming.
 
+
+
+### Estructura
+Para el siguiente ejercicio se planteó crear una interfaz genérica **Streamable** que es implementada por la clase abstracta **BasicStreamableCollection**, y a la creación de tres clases (**CollectionSeries**, **CollectionDocumentales** y **CollectionPeliculas**) que extienden a la clase abstracta. Además para estas tres clases de collection, se crearon las clases **Serie**, **Documental** y **Pelicula** que son pasadas por el contructor de las clases collection.
+
+### Código
+Las imágenes que se muestran a continuación fueron tomadas antes de comentar el código.
+#### Interface Streamable y Clase BasicStreamableCollection
+![Interface Streamable y Clase BasicStreamableCollection](./assets/images/interfazyclase.PNG)
+
+La interfaz **Streamable** contiene 4 métodos que se implementan a la clase **BasicStreamableCollection** siendo:
+* **add()** para añadir un objeto a la colección.
+* **getSize()** para saber cuando objetos contiene la colección.
+* Y los métodos **getNameVideo** y **getYearVideo** para buscar un objeto por nombre y año pero de tipo abstracto para que sean especificadas en clases posteriores.
+
+#### Clase Serie
+![Clase Serie](./assets/images/claseSerie.PNG)
+
+Clase que se contruye con los atributos **name**, **year** y **chapters**. Contiene los métodos **Set** y **Get** de los atributos y un método **print** con el cual se puede visualizar la información de un objeto de la clase.
+
+#### Clase CollectionSerie
+![Clase CollectionSerie](./assets/images/claseCollectionSerie.PNG)
+
+Clase extendida de la clase abstracta la cual se construye a partir de objetos de la clase **Serie**. También, implementa los métodos **getNameVideo** y **getNameYear** que buscan una serie por nombre y año entre la colección.
+
+#### Clase Documental
+![Clase Documental](./assets/images/claseDocumental.PNG)
+
+Clase que se contruye con los atributos **name**, **year** y **director**. Contiene los métodos **Set** y **Get** de los atributos y un método **print** con el cual se puede visualizar la información de un objeto de la clase.
+
+#### Clase CollectionDocumental
+![Clase CollectionDocumental](./assets/images/claseCollectionDocumental.PNG)
+
+Clase extendida de la clase abstracta la cual se construye a partir de objetos de la clase **Documental**. También, implementa los métodos **getNameVideo** y **getNameYear** que buscan un documental por nombre y año entre la colección.
+#### Clase Pelicula
+![Clase Pelicula](./assets/images/clasePelicula.PNG)
+
+Clase que se contruye con los atributos **name**, **year**, **protagonista** y **genero**. Contiene los métodos **Set** y **Get** de los atributos y un método **print** con el cual se puede visualizar la información de un objeto de la clase.
+
+
+#### Clase CollectionPelicula
+![Clase CollectionPelicula](./assets/images/claseCollectionPelicula.PNG)
+
+Clase extendida de la clase abstracta la cual se construye a partir de objetos de la clase **Pelicula**. También, implementa los métodos **getNameVideo** y **getNameYear** que buscan una pelicula por nombre y año entre la colección.
+
+
+Respetando los principios SOLID. SE puede seguir ampliando estas clases sin modificar clases de jerarquía más alta. Por ehemplo en la clase **CollectionPelicula** se puede implementar métodos que busquen peliculas por género, sin que esto afecte al resto de clases.
+
+#### Objetos y llamadas a métodos
+![Objetos1](./assets/images/objetoseje2.PNG)
+
+### Resultados
+![Resultado](./assets/images/resultadoeje2.PNG)
+
+### Test Unitario
+![Test ejercicio 2 parte 1](./assets/images/test2parte1.PNG)
+
+![Test ejercicio 2 parte 2](./assets/images/test2parte2.PNG)
+
+![Test ejercicio 2 parte 3](./assets/images/test2parte3.PNG)
+
+![Test ejercicio 2 parte 4](./assets/images/test2parte4.PNG)
+
+![Test ejercicio 2 parte 5](./assets/images/test2parte5.PNG)
+
+Test unitario que comprueba todo el código.
+
+### Demostración Test Unitario
+![resultadoTest2 parte 1](./assets/images/resultadotest2parte1.PNG)
+
+![resultadoTest2 parte 2](./assets/images/resultadotest2parte2.PNG)
+
+## Ejercicio 3 - El cifrado indescifrable
 El objetivo de este ejercicio es cifrar y descifrar mensajes a partir de un alfabeto y una clave.
 
 ### Estructura
@@ -162,5 +236,7 @@ Para el caso del descifrado, el algoritmo es el mismo, con la diferencia de que 
 ### Demostración Test Unitario
 ![resultadoTest3](./assets/images/resultadoTesteje3.PNG)
 
-### Coverage
-![Coverage](./assets/images/coverage3.PNG)
+## Coverage Final
+![Coverage](./assets/images/CoverageFinal.PNG)
+
+Resultado del coverage de todos los ejercicios implementados.
