@@ -2,6 +2,7 @@
   "entryPoints": [
     "./src/index.ts",
     "./src/modi.ts",
+    "./src/modificacion_28_03.ts",
     "./src/ejercicio-1.ts",
     "./src/ejercicio-2.ts",
     "./src/ejercicio-3.ts"
